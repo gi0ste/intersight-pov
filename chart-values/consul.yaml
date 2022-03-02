@@ -1,0 +1,23 @@
+server:
+  enable: "true"
+  replicas: 1
+  storageClass: "ocloud-ssd-standard"
+  storage: 10Gi
+
+ui:
+  enabled: true
+  service:
+    enabled: true
+    type: NodePort
+    nodePort:
+      http: 30000
+      https: 30001
+  ingress:
+    enabled: true
+    pathType: Prefix  
+    hosts:
+      - host: ${ingress_domain}
+        paths:
+          - /
+    annotations: |
+      kubernetes.io/ingress.class: "nginx"

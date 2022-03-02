@@ -1,0 +1,13 @@
+ingress:
+  enabled: true
+  ingressClassName: nginx
+  path: /
+  pathType: Prefix  
+  hosts:
+    - ${ingress_domain}
+    - ${internal_ingress_domain}
+
+persistence:
+  enabled: true
+  storageClassName: ocloud-ssd-standard
+  size: 1Gi
