@@ -1,5 +1,5 @@
 resource "openstack_networking_secgroup_v2" "obs_secgrp" {
-  name        = "obs_vm_secgrp"
+  name        = "${var.obs_name}_secgrp"
   description = "Observability VM security group"
 }
 
