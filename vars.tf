@@ -1,3 +1,8 @@
+variable obs_name {
+    type = string
+    description = "The OBS VM name"
+}
+
 variable user_name {
     type = string
     description = "The O.Cloud username"
