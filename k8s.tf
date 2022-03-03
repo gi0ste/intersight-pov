@@ -92,7 +92,7 @@ resource "helm_release" "obs_consul" {
 }
 
 resource "grafana_data_source" "prometheus" {
-  depends_on = [ helm_release.obs_grafana, kubernetes_secret.obs_grafana_secret ]
+  depends_on = [ helm_release.obs_grafana, data.kubernetes_secret.obs_grafana_secret ]
   type = "prometheus"
   name = "obs-prometheus"
   url  = "http://obs-prometheus-server"
