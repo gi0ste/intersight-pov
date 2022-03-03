@@ -1,6 +1,6 @@
 # the observability VM
 resource "openstack_compute_instance_v2" "obs_vm" {
-  name = "observability-vm"
+  name = var.obs_name 
   flavor_name = "e3standard.x5"
   image_name = "template-focal-docker"
 
